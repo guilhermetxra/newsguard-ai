@@ -1,6 +1,12 @@
-# NewsGuard AI
+<p align="center">
+  <img src="screenshots/logo.png" width="220">
+</p>
 
+<h1 align="center">NewsGuard AI</h1>
+
+<p align="center">
 AI-powered news analysis and social media automation platform built with Java and Spring Boot.
+</p>
 
 ---
 
