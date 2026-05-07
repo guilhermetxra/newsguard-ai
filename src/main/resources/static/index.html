@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>NewsGuard AI</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter, Arial, sans-serif;
+            background: #f3f6fa;
+            color: #111827;
+        }
+
+        .page {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .app {
+            width: 100%;
+            max-width: 980px;
+            min-height: 92vh;
+            background: linear-gradient(180deg, #f8fbff 0%, #eef3f8 100%);
+            border: 1px solid #dbe3ec;
+            border-radius: 18px;
+            box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+            padding: 42px 40px 28px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero {
+            text-align: center;
+        }
+
+        .logo {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+            margin-bottom: 14px;
+            border-radius: 28px;
+            filter: drop-shadow(0 18px 35px rgba(37, 99, 235, 0.18));
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 30px;
+            font-weight: 800;
+        }
+
+        .subtitle {
+            margin-top: 10px;
+            color: #6b7280;
+            font-size: 16px;
+        }
+
+        .suggestions {
+            margin: 40px auto 18px;
+            width: 100%;
+            max-width: 700px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
+            padding: 16px;
+            box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+        }
+
+        .card-title {
+            font-size: 14px;
+            font-weight: 800;
+            margin-bottom: 7px;
+        }
+
+        .card-text {
+            font-size: 12px;
+            color: #5f6b7a;
+            line-height: 1.45;
+        }
+
+        .input-area {
+            max-width: 700px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            align-items: flex-end;
+            gap: 10px;
+            background: white;
+            border: 1px solid #dbe3ec;
+            border-radius: 18px;
+            padding: 10px;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+        }
+
+        textarea {
+            flex: 1;
+            min-height: 54px;
+            max-height: 220px;
+            border: none;
+            outline: none;
+            resize: none;
+            overflow-y: auto;
+            font-size: 14px;
+            font-family: inherit;
+            padding: 13px;
+            line-height: 1.5;
+            background: transparent;
+        }
+
+        button {
+            border: none;
+            background: #2563eb;
+            color: white;
+            border-radius: 14px;
+            padding: 16px 22px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+        }
+
+        .result {
+            display: none;
+            max-width: 700px;
+            width: 100%;
+            margin: 22px auto 0;
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 20px;
+            white-space: pre-wrap;
+            line-height: 1.7;
+            font-size: 14px;
+            color: #111827;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+        }
+
+        @media (max-width: 760px) {
+
+            .suggestions {
+                grid-template-columns: 1fr;
+            }
+
+            .app {
+                padding: 28px 18px 20px;
+            }
+
+            .logo {
+                width: 120px;
+                height: 120px;
+            }
+
+            .input-area {
+                flex-direction: column;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="page">
+    <main class="app">
+
+        <section class="hero">
+            <img src="/logo.png" alt="NewsGuard AI Logo" class="logo">
+
+            <h1>NewsGuard AI</h1>
+
+            <p class="subtitle">
+                Analise notícias e gere resumos, títulos, legendas, comentários e CTAs com IA.
+            </p>
+        </section>
+
+        <section class="suggestions">
+
+            <div class="card">
+                <div class="card-title">Resumo da notícia</div>
+                <div class="card-text">
+                    Transforma textos longos em resumos claros e objetivos.
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Títulos fortes</div>
+                <div class="card-text">
+                    Cria chamadas curtas e impactantes para redes sociais.
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Comentários</div>
+                <div class="card-text">
+                    Gera comentários prontos para engajamento em publicações.
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Legenda com CTA</div>
+                <div class="card-text">
+                    Produz legendas com chamada para ação de forma estratégica.
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Veracidade</div>
+                <div class="card-text">
+                    Aponta pontos que precisam de fonte, contexto ou checagem.
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Tom editorial</div>
+                <div class="card-text">
+                    Adapta o conteúdo para tom sério, institucional ou mais firme.
+                </div>
+            </div>
+
+        </section>
+
+        <section class="input-area">
+
+            <textarea
+                    id="content"
+                    placeholder="Cole a notícia aqui..."
+                    oninput="autoResize(this)"
+            ></textarea>
+
+            <button onclick="analyzeNews()">
+                Enviar
+            </button>
+
+        </section>
+
+        <pre id="result" class="result"></pre>
+
+    </main>
+</div>
+
+<script>
+
+    function autoResize(textarea) {
+        textarea.style.height = "auto";
+        textarea.style.height = textarea.scrollHeight + "px";
+    }
+
+    async function analyzeNews() {
+
+        const content = document.getElementById("content").value;
+        const result = document.getElementById("result");
+
+        if (!content.trim()) {
+            result.style.display = "block";
+            result.textContent = "Cole uma notícia antes de analisar.";
+            return;
+        }
+
+        result.style.display = "block";
+        result.textContent = "Analisando notícia...";
+
+        try {
+
+            const response = await fetch("/api/news/analyze", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ content: content })
+            });
+
+            const data = await response.text();
+
+            result.textContent = data;
+
+        } catch (error) {
+
+            result.textContent =
+                "Erro ao analisar notícia: " + error.message;
+        }
+    }
+
+</script>
+
+</body>
+</html>
