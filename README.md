@@ -24,29 +24,31 @@ AI-powered news analysis and social media automation platform built with Java an
 
 ## Features
 
-- Automatic news summarization
-- AI-generated social media titles
-- CTA and caption generation
-- Automated comments
-- Contextual content analysis
-- Social media workflow automation
+* Automatic news summarization
+* AI-generated social media titles
+* CTA and caption generation
+* Automated comments
+* Contextual content analysis
+* Social media workflow automation
 
 ---
 
 ## Technologies
 
-- Java 21
-- Spring Boot
-- OpenAI API
-- HTML/CSS/JavaScript
-- Maven
-- REST API
+* Java 21
+* Spring Boot
+* OpenAI API
+* HTML/CSS/JavaScript
+* Maven
+* REST API
 
 ---
 
 ## Purpose
 
 NewsGuard AI was developed as a practical AI-powered automation platform focused on productivity and content generation for social media workflows.
+
+The project was inspired by real communication demands involving news analysis, social media engagement, and public awareness content — especially within animal protection and public interest topics.
 
 ---
 
